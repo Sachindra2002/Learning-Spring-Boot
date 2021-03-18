@@ -1,6 +1,10 @@
 package com.sachindra.rodrigo.practice.learningspring;
 
+import com.sachindra.rodrigo.practice.learningspring.data.entity.Guest;
+import com.sachindra.rodrigo.practice.learningspring.data.entity.Reservation;
 import com.sachindra.rodrigo.practice.learningspring.data.entity.Room;
+import com.sachindra.rodrigo.practice.learningspring.data.repository.GuestRepository;
+import com.sachindra.rodrigo.practice.learningspring.data.repository.ReservationRepository;
 import com.sachindra.rodrigo.practice.learningspring.data.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -16,16 +20,5 @@ public class LearningSpringApplication {
         SpringApplication.run(LearningSpringApplication.class, args);
     }
 
-    @RestController
-    @RequestMapping("/rooms")
-    public class RoomController{
-        @Autowired
-        private RoomRepository roomRepository;
-
-        @GetMapping
-        public Iterable<Room> getRooms(){
-            return this.roomRepository.findAll();
-        }
-    }
 
 }
